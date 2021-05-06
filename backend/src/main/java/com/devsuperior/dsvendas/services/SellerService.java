@@ -15,7 +15,7 @@ public class SellerService {
 
 	@Autowired
 	private SellerRepository repository;
-	
+
 	public List<SellerDTO> findAll() {
 		List<Seller> sellers = repository.findAll();
 		return sellers.stream().map(seller -> new SellerDTO(seller)).collect(Collectors.toList());

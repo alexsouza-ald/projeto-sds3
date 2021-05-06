@@ -22,14 +22,13 @@ import lombok.Setter;
 @Entity
 @Table(name = "tb_sellers")
 public class Seller {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
+
 	@OneToMany(mappedBy = "seller")
 	@Setter(AccessLevel.NONE)
 	private List<Sale> sales = new ArrayList<>();
-
 }
